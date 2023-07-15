@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;400;500&display=swap');
+
+body {
+    /*quitar margenes por default de html*/
+    margin: 0px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.titulo {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    /*border: 1px solid black;*/
+    margin: 0px;
+    padding: 24px;
+}
+
+
+
+

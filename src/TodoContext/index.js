@@ -63,6 +63,20 @@ function TodoProvider ({ children }){
   }
 
 
+  const addLista = function(texto){
+    let newLista = [...List];
+
+    const arreglo = {text: texto, completed: false} ;
+
+    newLista.push(arreglo);
+    setList(newLista);
+  }
+
+
+
+
+  
+
 
   //filtrar los completados y contar resultado
   const Completados = List.filter(dato => dato.completed == true).length;
@@ -72,7 +86,7 @@ function TodoProvider ({ children }){
  
 
   return (
-    <TodoContext.Provider value={{List, setList, setListList, loading, error, searchedTodos, modifLista, elimLista, Total, Completados, Buscar, setBuscar, openModal, setOpenModal }} >
+    <TodoContext.Provider value={{List, setList, setListList, loading, error, searchedTodos, modifLista, elimLista, addLista, Total, Completados, Buscar, setBuscar, openModal, setOpenModal }} >
       { children }
     </TodoContext.Provider>
   );

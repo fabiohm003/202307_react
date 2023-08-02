@@ -9,6 +9,7 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos } from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { TodoForm } from '../TodoForm';
 
 import { TodoContext, TodoProvider } from '../TodoContext';
 import { Modal } from '../Modal';
@@ -54,21 +55,11 @@ function App() {
 
             </TodoList>
 
-            <CreateTodoButton />
-
-              <Modal>
-                <p>paso paso paso</p>
-              </Modal>
-
-              <Modal>
-                <h3>qwertyuihgfds</h3>
-              </Modal>
-
-              {/*setOpenModal(true)*/}
+            <CreateTodoButton setOpenModal={setOpenModal} />
 
             {(openModal == true) && (
               <Modal>
-                transportar todo
+                <TodoForm />
               </Modal>
             )}
 

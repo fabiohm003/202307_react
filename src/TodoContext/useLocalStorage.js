@@ -20,27 +20,27 @@ export function useLocalStorage(nombreItem, vlrInicialItem){
     setTimeout(() => {
 
       try {
-        if (ArrLista == null || ArrLista.length == 0){
+        //if (ArrLista == null || ArrLista.length == 0){}
 
-          const arreglo =
-          [
-              {text: 'contar ceboollas', completed: true},
-              {text: 'tomár curso tomar curso tomar curso tomar curso tomar curso tomar curso', completed: false},
-              {text: 'tomar agua', completed: false},
-          ];
+        const arreglo =
+        [
+            {text: 'contar ceboollas', completed: true},
+            {text: 'tomár curso tomar curso tomar curso tomar curso tomar curso tomar curso', completed: false},
+            {text: 'tomar agua', completed: false},
+        ];
 
-          vlrInicialItem = arreglo;
-  
-          localStorage.setItem(nombreItem, JSON.stringify(vlrInicialItem));
-      
-          ArrLista = JSON.parse(localStorage.getItem(nombreItem));
+        vlrInicialItem = arreglo;
 
-          setLista(ArrLista);
+        localStorage.setItem(nombreItem, JSON.stringify(vlrInicialItem));
+    
+        ArrLista = JSON.parse(localStorage.getItem(nombreItem));
 
-          console.log("setLista(ArrLista)");
-         
-        }
+        setLista(ArrLista);
+
+        console.log("setLista(ArrLista)");
+       
         setLoading(false);
+
       } catch (error) {
         setLoading(false);
         setError(false);
@@ -67,15 +67,7 @@ export function useLocalStorage(nombreItem, vlrInicialItem){
     return;
   }
 
-  //ejemplo de retorno como objeto
-  /*
-  return {
-    "Lista": Lista, 
-    "saveTodos": saveTodos, 
-    "saveTodosTodos": saveTodosTodos, 
-    "loading": loading, 
-    "error": error
-  };*/
+
   return [Lista, saveTodos, saveTodosTodos, loading, error];
 }
 
